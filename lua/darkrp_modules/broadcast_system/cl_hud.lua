@@ -34,7 +34,7 @@ net.Receive("mayor_broadcast", function()
 
 		draw.RoundedBox(20, ScrW() / 2 - (ScrW() / 2) + Width / 2, 17, ScrW() - Width, Height, Color(0, 0, 0, 100))
 
-		draw.SimpleText("Mayor Broadcast:", "BroadcastHeader", ScrW() / 2, 40, Color(203, 25, 12), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+		draw.SimpleText("Mayor Broadcast", "BroadcastHeader", ScrW() / 2, 40, Color(203, 25, 12), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 		draw.SimpleText(Message, "BroadcastText", ScrW() / 2, Height / 1.2, Color(255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 	end)
 
@@ -65,7 +65,7 @@ net.Receive("admin_broadcast", function()
 
 		draw.RoundedBox(20, ScrW() / 2 - (ScrW() / 2) + Width / 2, 17, ScrW() - Width, Height, Color(0, 0, 0, 100))
 
-		draw.SimpleText("Listen Up:", "BroadcastHeader", ScrW() / 2, 40, Color(203, 25, 12), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+		draw.SimpleText("Listen Up", "BroadcastHeader", ScrW() / 2, 40, Color(203, 25, 12), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 		draw.SimpleText(Message, "BroadcastText", ScrW() / 2, Height / 1.2, Color(255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 	end)
 
@@ -76,11 +76,11 @@ end)
 
 -- Developer Information
 
-local BroadcastVersion = "1.0"
+local BroadcastVersion = "1.1"
 
 concommand.Add("broadcast_info", function()
 	local InfoTable = {
-		"https://steamcommunity.com/sharedfiles/filedetails/?id=3246928845 created by Haze_of_dream",
+		"https://steamcommunity.com/sharedfiles/filedetails/?id=3292250208 created by Haze_of_dream",
 		"",
 		"Contact at: ",
 		"STEAM_0:1:75838598",
@@ -93,5 +93,3 @@ concommand.Add("broadcast_info", function()
 		print(msg)
 	end
 end)
-
---#NoSimplerr#

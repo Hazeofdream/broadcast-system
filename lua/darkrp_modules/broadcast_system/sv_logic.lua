@@ -59,5 +59,3 @@ local function AdminBroadcast(ply, args)
 end
 DarkRP.defineChatCommand("abroadcast", AdminBroadcast, 1.5)
 DarkRP.defineChatCommand("adminbroadcast", AdminBroadcast, 1.5)
-
---#NoSimplerr#
