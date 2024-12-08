@@ -76,7 +76,7 @@ end)
 
 -- Developer Information
 
-local BroadcastVersion = "1.1"
+local BroadcastVersion = "1.2"
 
 concommand.Add("broadcast_info", function()
 	local InfoTable = {

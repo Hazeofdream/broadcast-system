@@ -1,6 +1,8 @@
 util.AddNetworkString("mayor_broadcast")
 util.AddNetworkString("admin_broadcast")
 
+CreateConVar("sv_broadcast_mayor", 1, {FCVAR_NOTIFY}, "Whether to allow Mayors to use the broadcast addon.")
+
 local function MayorBroadcast(ply, args)
     if args == "" then
         DarkRP.notify(ply, 1, 4, DarkRP.getPhrase("invalid_x", DarkRP.getPhrase("arguments"), ""))
@@ -25,6 +27,8 @@ local function MayorBroadcast(ply, args)
             DarkRP.talkToPerson(v, col, phrase .. " " .. name, col2, text, ply)
         end
 
+        if GetConVar("sv_coup_cooldown"):GetInt() == 0 then return end
+
         net.Start("mayor_broadcast")
             net.WriteString(text)
             net.WriteFloat(CurTime())
@@ -41,7 +45,7 @@ local function AdminBroadcast(ply, args)
     end
     local Team = ply:Team()
     if not ply:IsAdmin() or not ply:IsSuperAdmin() then
-        DarkRP.notify(ply, 1, 4, DarkRP.getPhrase("incorrect_job", DarkRP.getPhrase("broadcast")))
+        DarkRP.notify(ply, 1, 4, "You must be an admin to use this command.")
         return ""
     end
     local DoSay = function(text)
