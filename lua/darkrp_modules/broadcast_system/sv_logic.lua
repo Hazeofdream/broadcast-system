@@ -27,6 +27,8 @@ local function MayorBroadcast(ply, args)
             DarkRP.talkToPerson(v, col, phrase .. " " .. name, col2, text, ply)
         end
 
+        if GetConVar("sv_broadcast_mayor"):GetInt() == 0 then return end
+
         net.Start("mayor_broadcast")
             net.WriteString(text)
             net.WriteFloat(CurTime())
